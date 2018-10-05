@@ -1,6 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-const Album = () => <View />;
+import styles from './styles';
+
+const Album = () => (
+  <View style={styles.container}>
+    <Text>Album details</Text>
+  </View>
+);
+
+Album.navigationOptions = {
+  title: 'Album',
+};
+
+Album.navigationOptions = ({ navigation }) => ({
+  title: navigation.state.params.album.title,
+});
 
 export default Album;
